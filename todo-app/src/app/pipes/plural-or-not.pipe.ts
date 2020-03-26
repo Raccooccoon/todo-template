@@ -8,5 +8,4 @@ export class PluralOrNotPipe implements PipeTransform {
   public transform(count: number, pluralForm: string = 's'): string {
     return count === 1 ? '' : pluralForm;
   }
-
 }
