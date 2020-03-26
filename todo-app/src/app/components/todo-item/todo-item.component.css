@@ -1,0 +1,55 @@
+.view {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.editing {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.edit {
+  font-size: 24px;
+  height: 24px;
+  width: 707px;
+  margin: 13px 60px 13px 33px;
+  outline: none;
+  border: 0;
+  text-align: center;
+}
+
+.toggle {
+  width: 23px;
+  height: 23px;
+  cursor: pointer;
+}
+
+.destroy {
+  border-radius: 25px;
+  background: #FC6E51;
+  border: 2px solid #c0c0c0;
+  color: #ffffff;
+  cursor: pointer;
+  visibility: hidden;
+  height: 50px;
+  width: 50px;
+}
+
+.destroy:hover {
+  background: #fb512e;
+}
+
+.completed label {
+  text-decoration: line-through;
+}
+
+li {
+  font-size: 24px;
+  border: 2px solid #2F80ED;
+  padding: 10px;
+  list-style: none;
+  margin: 10px 200px;
+  width: 800px;
+}

@@ -1,0 +1,8 @@
+<section *ngIf="this.toDoService.toDosList.length" class="main">
+  <input id="toggle-all" class="toggle-all" type="checkbox"
+  (change)="this.toDoService.markAllToDos()" [checked]="this.toDoService.generalMarker">
+  <label for="toggle-all">Mark all as complete</label>
+  <ul class="todo-list">
+    <app-todo-item *ngFor="let toDo of toDoService.toDosList" [toDo]="toDo"></app-todo-item>
+  </ul>
+</section>

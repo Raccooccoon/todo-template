@@ -1,0 +1,9 @@
+<section class="todoapp">
+  <app-header></app-header>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+</section>
+<footer *ngIf="this.toDoService.toDosList.length" class="info">
+  <p>Double-click to edit an item</p>
+</footer>
+

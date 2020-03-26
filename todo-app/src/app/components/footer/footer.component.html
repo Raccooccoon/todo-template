@@ -1,0 +1,16 @@
+<footer *ngIf="this.toDoService.toDosList.length" class="footer">
+  <span class="todo-count"><strong>{{ toDoService.activeToDos.length }}</strong> item{{ toDoService.activeToDos.length | pluralOrNot }} left</span>
+  <button *ngIf="this.toDoService.showClearButton" class="clear-completed"
+  (click)="this.toDoService.clearCompletedToDos()">Clear completed</button>
+  <ul class="filters">
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+      <a class="selected" routerLink="/">All</a>
+    </li>
+    <li routerLinkActive="active">
+      <a routerLink="active">Active</a>
+    </li>
+    <li routerLinkActive="active">
+      <a routerLink="completed">Completed</a>
+    </li>
+</ul>
+</footer>

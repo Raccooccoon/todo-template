@@ -1,0 +1,44 @@
+.filters {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  width: 400px;
+  margin: 25px 400px;
+}
+
+.filters li a {
+  color: #2F80ED;
+  text-decoration: none;
+}
+
+.filters li a:hover {
+  text-decoration: underline;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.todo-count {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  margin: 20px 550px 0px;
+}
+
+.clear-completed {
+  background-color: #2F80ED;
+  border: 2px solid #333333;
+  border-radius: 3px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 20px;
+  margin: 10px 515px;
+  width: 170px;
+  height: 40px;
+}
+
+.clear-completed:hover {
+  background-color: #333333;
+  border: 2px solid #2F80ED;
+}

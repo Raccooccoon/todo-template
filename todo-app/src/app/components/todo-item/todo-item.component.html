@@ -1,0 +1,11 @@
+<li [ngClass]="{ completed: toDo.completed, editing: toDo.isEditActive }">
+  <div *ngIf="!toDo.isEditActive" class="view">
+    <input class="toggle" type="checkbox" [checked]="toDo.completed" (change)="this.toDoService.toggleToDo(toDo)">
+    <label (dblclick)="toDo.isEditActive=true">{{ toDo.title }}</label>
+    <button (click)="this.toDoService.deleteToDo(toDo)" id="destroy" class="destroy" #destroy>Delete</button>
+  </div>
+  <input *ngIf="toDo.isEditActive" class="edit" #edit [value]="toDo.title"
+  (keyup.esc)="edit.value=this.toDoService.removeEdits(toDo)"
+  (keyup.enter)="this.toDoService.editToDo(toDo, edit.value)"
+  (blur)="this.toDoService.editToDo(toDo, edit.value)">
+</li>

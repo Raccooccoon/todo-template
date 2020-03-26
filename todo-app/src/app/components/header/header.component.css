@@ -1,0 +1,19 @@
+.header {
+  background-color: #2F80ED;
+  color: #ffffff;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 25px;
+  padding: 1%;
+  width: 98%;
+}
+
+.new-todo {
+  border: 1px solid #333333;
+  color: #333333;
+  font-size: 18px;
+  outline: none;
+  padding-left: 5px;
+  height: 30px;
+  width: 300px;
+}
