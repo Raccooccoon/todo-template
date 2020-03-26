@@ -43,6 +43,7 @@
 
 .completed label {
   text-decoration: line-through;
+  text-decoration-color: #2F80ED;
 }
 
 li {
