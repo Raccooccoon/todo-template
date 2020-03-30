@@ -1,5 +1,6 @@
-<footer *ngIf="this.toDoService.toDosList.length" class="footer">
-  <span class="todo-count"><strong>{{ toDoService.activeToDos.length }}</strong> item{{ toDoService.activeToDos.length | pluralOrNot }} left</span>
+<footer class="footer">
+  <span class="todo-count"><strong>{{ this.toDoService.filterActiveTodos().length }}</strong>
+    item{{ this.toDoService.filterActiveTodos().length | pluralOrNot }} left</span>
   <button *ngIf="this.toDoService.showClearButton" class="clear-completed"
   (click)="this.toDoService.clearCompletedToDos()">Clear completed</button>
   <ul class="filters">

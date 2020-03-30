@@ -10,8 +10,6 @@ export class ManageTodosService {
   public showClearButton: boolean = false;
   public newToDo: string = '';
   public toDosList: IToDo[] = [];
-  public activeToDos: IToDo[] = [];
-  public completedToDos: IToDo[] = [];
 
   constructor() { }
 
@@ -28,19 +26,17 @@ export class ManageTodosService {
     }
     this.newToDo = '';
     this.generalMarker = false;
-    this.activeToDos = this.toDosList.filter(item => item.completed === false);
-    this.completedToDos = this.toDosList.filter(item => item.completed === true);
   }
 
   public deleteToDo(toDo: IToDo): void {
     this.toDosList = this.toDosList.filter(item => item.id !== toDo.id);
-    this.activeToDos = this.toDosList.filter(item => item.completed === false);
-    this.completedToDos = this.toDosList.filter(item => item.completed === true);
+    if (this.toDosList.every(item => item.completed === false)) {
+      this.showClearButton = false;
+    }
   }
 
   public toggleToDo(toDo: IToDo): void {
     toDo.completed = !toDo.completed;
-    this.showClearButton = toDo.completed;
     if (this.toDosList.every(item => item.completed === true)) {
       this.generalMarker = true;
     } else {
@@ -49,8 +45,6 @@ export class ManageTodosService {
     if (this.toDosList.some(item => item.completed === true)) {
       this.showClearButton = true;
     }
-    this.activeToDos = this.toDosList.filter(item => item.completed === false);
-    this.completedToDos = this.toDosList.filter(item => item.completed === true);
   }
 
   public goToEditingMode(toDo: IToDo): void {
@@ -73,8 +67,6 @@ export class ManageTodosService {
 
   public clearCompletedToDos(): void {
     this.toDosList = this.toDosList.filter(item => item.completed === false);
-    this.activeToDos = this.toDosList.filter(item => item.completed === false);
-    this.completedToDos = this.toDosList.filter(item => item.completed === true);
     this.showClearButton = false;
     this.generalMarker = false;
   }
@@ -85,7 +77,13 @@ export class ManageTodosService {
       item.completed = this.generalMarker;
       return item;
     });
-    this.activeToDos = this.toDosList.filter(item => item.completed === false);
-    this.completedToDos = this.toDosList.filter(item => item.completed === true);
+  }
+
+  public filterActiveTodos(): IToDo[] {
+    return this.toDosList.filter(item => item.completed === false);
+  }
+
+  public filterCompletedTodos(): IToDo[] {
+    return this.toDosList.filter(item => item.completed === true);
   }
 }

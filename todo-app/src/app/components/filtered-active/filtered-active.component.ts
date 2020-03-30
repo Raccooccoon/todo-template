@@ -7,7 +7,5 @@ import { ManageTodosService } from '../../services/manage-todos.service';
   styleUrls: ['./filtered-active.component.css']
 })
 export class FilteredActiveComponent {
-
   constructor(public toDoService: ManageTodosService) { }
-
 }
