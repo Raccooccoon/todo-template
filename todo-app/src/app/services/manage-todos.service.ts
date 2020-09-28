@@ -79,11 +79,11 @@ export class ManageTodosService {
     });
   }
 
-  public filterActiveTodos(): IToDo[] {
+  public filterActiveToDos(): IToDo[] {
     return this.toDosList.filter(item => item.completed === false);
   }
 
-  public filterCompletedTodos(): IToDo[] {
+  public filterCompletedToDos(): IToDo[] {
     return this.toDosList.filter(item => item.completed === true);
   }
 }

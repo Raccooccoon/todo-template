@@ -7,5 +7,7 @@ import { ManageTodosService } from '../../services/manage-todos.service';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
+
   constructor(public toDoService: ManageTodosService) { }
+
 }
